@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mdule4HW3_Db
+namespace MySolution
 {
     public class Project
     { 
@@ -12,7 +12,7 @@ namespace Mdule4HW3_Db
         public string Name { get; set; }
         public decimal Budget { get; set; }
         public DateTime StartedDate { get; set; }
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+       public List<Employee> Employees { get; set; } = new List<Employee>();
         public List<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
     }
 }

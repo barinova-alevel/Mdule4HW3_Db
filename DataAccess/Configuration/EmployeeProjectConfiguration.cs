@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 
-namespace Mdule4HW3_Db.Configuration
+namespace MySolution.Configuration
 {
     public class EmployeeProjectConfiguration : IEntityTypeConfiguration<EmployeeProject>
     {
@@ -15,6 +15,16 @@ namespace Mdule4HW3_Db.Configuration
             builder.Property(p => p.StartedDate).IsRequired().HasColumnName("StartedDate");
             builder.Property(p => p.EmployeeId).IsRequired().HasColumnName("EmployeeId");
             builder.Property(p => p.ProjectId).IsRequired().HasColumnName("ProjectId");
+
+            builder.HasOne(p => p.Project)
+                .WithMany(e => e.EmployeeProjects)
+                .HasForeignKey(p => p.ProjectId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(e => e.Employee)
+                .WithMany(p => p.EmployeeProjects)
+                .HasForeignKey(e => e.EmployeeId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasData(new List<EmployeeProject>()
             { 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mdule4HW3_Db
+namespace MySolution
 {
     public class Title
     {

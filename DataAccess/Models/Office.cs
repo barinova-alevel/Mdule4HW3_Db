@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mdule4HW3_Db
+namespace MySolution
 {
     public class Office
     {

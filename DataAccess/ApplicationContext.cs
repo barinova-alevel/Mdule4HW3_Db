@@ -1,26 +1,29 @@
-﻿using Mdule4HW3_Db.Configuration;
+﻿using MySolution.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System;
 
-namespace Mdule4HW3_Db
+namespace MySolution.DataAccess
 {
     public class ApplicationContext : DbContext
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            Database.EnsureCreated();
+           
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            builder.AddJsonFile("appsettings.json", true, true);
-            var config = builder.Build();
-            string connectionString = config.GetConnectionString("DefaultConnection");
-            optionsBuilder.UseSqlServer(connectionString);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    var builder = new ConfigurationBuilder();
+        //    builder.SetBasePath(Directory.GetCurrentDirectory());
+        //    builder.AddJsonFile("appsettings.json", true, true);
+        //    var config = builder.Build();
+        //    string connectionString = config.GetConnectionString("DefaultConnection");
+        //    optionsBuilder.UseSqlServer(connectionString);
+        //    optionsBuilder.LogTo(Console.WriteLine);
+
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,15 +33,15 @@ namespace Mdule4HW3_Db
             modelBuilder.ApplyConfiguration(new TitleConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeProjectConfiguration());
 
-            modelBuilder.Entity<Employee>().HasOne(d => d.Office)
-                .WithMany(p => p.employees)
-                .HasForeignKey(d => d.OfficeId)
-                .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Employee>().HasOne(d => d.Office)
+            //    .WithMany(p => p.employees)
+            //    .HasForeignKey(d => d.OfficeId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Employee>().HasOne(t => t.Title)
-                .WithMany(p1 => p1.employees)
-                .HasForeignKey(t => t.TitleId)
-                .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Employee>().HasOne(t => t.Title)
+            //    .WithMany(p1 => p1.employees)
+            //    .HasForeignKey(t => t.TitleId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
             //modelBuilder.Entity<Employee>()
             //    .HasMany<Project>(pr => pr.EmployeeProjects)

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 
-namespace Mdule4HW3_Db.Configuration
+namespace MySolution.Configuration
 {
     public class ProjectConfiguration : IEntityTypeConfiguration<Project>
     {

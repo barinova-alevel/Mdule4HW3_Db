@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mdule4HW3_Db.Configuration
+namespace MySolution.Configuration
 {
     public class OfficeConfiguration : IEntityTypeConfiguration<Office>
     {

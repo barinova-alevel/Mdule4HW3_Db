@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mdule4HW3_Db
+namespace MySolution
 {
-   public class Employee
+    public class Employee
     {
-        [Key]
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -16,7 +16,6 @@ namespace Mdule4HW3_Db
         public int TitleId { get; set; }
         public Office Office { get; set; }
         public Title Title { get; set; }
-        public List<Project> Projects { get; set; } = new List<Project>();
         public List<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
     }
 }
