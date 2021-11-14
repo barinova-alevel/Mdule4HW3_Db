@@ -1,20 +1,25 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using MySolution.DataAccess;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Module4HW3_Db
+namespace Mdule4HW3_Db
 {
-    public class Program
+    public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
     {
-        static void Main(string[] args)
+        public ApplicationContext CreateDbContext(string[] args)
         {
             IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).Build();
             var dbOptionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             dbOptionsBuilder.UseSqlServer(connectionString, i => i.CommandTimeout(20));
-            var applicationContext = new ApplicationContext(dbOptionsBuilder.Options);
-            applicationContext.Database.Migrate();
-            applicationContext.SaveChanges();
+
+            return new ApplicationContext(dbOptionsBuilder.Options);
         }
     }
 }

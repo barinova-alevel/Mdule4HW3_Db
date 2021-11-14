@@ -31,9 +31,10 @@ namespace MySolution
             {
                 new Employee() { Id = 1, FirstName = "Aaron", LastName = "Aronson", HiredDate = new DateTime(2021,05,09,9,15,0), DateOfBirth =new DateTime(2000,05,09,9,15,0), OfficeId = 1, TitleId = 1 },
                 new Employee() { Id = 2, FirstName = "Adam",LastName = "Adamson", HiredDate = new DateTime(2021,05,09,9,15,0), DateOfBirth =new DateTime(2000,05,09,9,15,0), OfficeId = 1, TitleId = 1 },
-                new Employee() { Id = 3, FirstName = "Devid",LastName = "Devidson", HiredDate = new DateTime(2021,05,09,9,15,0), DateOfBirth =new DateTime(2000,05,09,9,15,0), OfficeId = 2, TitleId = 1 }
+                new Employee() { Id = 3, FirstName = "Devid",LastName = "Devidson", HiredDate = new DateTime(2021,05,09,9,15,0), DateOfBirth =new DateTime(2000,05,09,9,15,0), OfficeId = 2, TitleId = 1 },
+                new Employee() { Id = 4, FirstName = "Kevin", LastName = "Aronson", HiredDate = new DateTime(2021,05,09,9,15,0), DateOfBirth =new DateTime(2000,05,09,9,15,0), OfficeId = 1, TitleId = 1 }
+
             });
         }
-
     }
 }
