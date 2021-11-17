@@ -23,7 +23,7 @@ namespace MySolution
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(d => d.Office)
-                .WithMany(p => p.employees)
+                .WithMany(p => p.Employees)
                 .HasForeignKey(d => d.OfficeId)
                 .OnDelete(DeleteBehavior.Cascade);
 

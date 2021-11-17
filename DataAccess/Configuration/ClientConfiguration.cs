@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MySolution.DataAccess.Configuration
 {
-    public class ClientConfiguration
+    public class ClientConfiguration : IEntityTypeConfiguration<Client>
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
@@ -14,14 +14,8 @@ namespace MySolution.DataAccess.Configuration
             builder.Property(p => p.FirstName).IsRequired().HasColumnName("First Name").HasMaxLength(50);
             builder.Property(p => p.LastName).IsRequired().HasColumnName("LastName").HasMaxLength(50);
             builder.Property(p => p.FirstOrder).IsRequired().HasColumnName("ClientSince");
-            builder.Property(p => p.Email).HasColumnName("DateOfBirdth");
-            builder.Property(p => p.ProjectId).IsRequired().HasColumnName("ProjectId");
-
-            builder.HasOne(r => r.Project)
-                .WithMany(c => c.clients)
-                .HasForeignKey(t => t.ProjectId)
-                .OnDelete(DeleteBehavior.Cascade);
-
+            builder.Property(p => p.Email).HasColumnName("Email");
+            
             builder.HasData(new List<Client>()
             {
                 new Client() { Id = 1, FirstName = "Client1", LastName = "LastNameClient 2", FirstOrder = new DateTime(2020,05,09,9,15,0), Email = "mail1@mail.se"},
