@@ -5,7 +5,16 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mdule4HW3_Db", "Mdule4HW3_Db\Mdule4HW3_Db.csproj", "{B8A5A413-3BC7-4D1E-8C59-CD5636B26233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySolution.DataAccess", "DataAccess\MySolution.DataAccess.csproj", "{21C6A3F2-BD81-4570-AA6D-F8C461819A5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySolution.DataAccess", "DataAccess\MySolution.DataAccess.csproj", "{21C6A3F2-BD81-4570-AA6D-F8C461819A5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreensWithQueriy", "ScreensWithQueriy", "{9259DFBC-DD50-48DD-A34D-FCF4201066E9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Add.png = ..\..\..\Desktop\Add.png
+		..\..\..\Desktop\DateDifference.png = ..\..\..\Desktop\DateDifference.png
+		..\..\..\Desktop\Group.png = ..\..\..\Desktop\Group.png
+		..\..\..\Desktop\LeftJoins.png = ..\..\..\Desktop\LeftJoins.png
+		..\..\..\Desktop\Update.png = ..\..\..\Desktop\Update.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
